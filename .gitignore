@@ -25,4 +25,5 @@
 yarn-debug.log*
 .yarn-integrity
 draft.txt
+draft.sql
 .env
