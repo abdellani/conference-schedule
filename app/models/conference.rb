@@ -1,3 +1,3 @@
 class Conference < ApplicationRecord
-  has_many :talks
+  has_many :talks 
 end

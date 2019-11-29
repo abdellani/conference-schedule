@@ -5,12 +5,25 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
-Administrator.create({name:"admin",email:"admin@admin.com",password:"abcdef"})
-User.create({name:"test",email:"test@test.com",password:"abcdef"})
-Conference.create({date:"01/01/2020",location:"Earth"})
+Administrator.create({ name: "admin", email: "admin@admin.com", password: "abcdef" })
+users = [{ name: "speaker", email: "test@test.com", password: "abcdef" },
+         { name: "mentor", email: "test@test.com", password: "abcdef" },
+         { name: "participant", email: "test@test.com", password: "abcdef" }]
 
-conference=Conference.all.first
-conference.talks.create({day:1,start_time:"00:00",end_time:"01:00",location:"A",description:"blabla"})
-talk=conference.talks.first
-user=User.all.first
-user.attendances.create({talk:talk})
+users.each do |user|
+  User.create(user)
+end
+
+Conference.create({ date: "01/01/2020", location: "Earth" })
+
+conference = Conference.all.first
+conference.talks.create({ day: 1, start_time: "00:00", end_time: "01:00", location: "A", description: "blabla" })
+talk = conference.talks.first
+speaker = User.all.first
+speaker.attendances.create({ talk: talk, role: "speaker" })
+
+mentor = User.all.second
+mentor.attendances.create({ talk: talk, role: "mentor" })
+
+participant = User.all.second
+participant.attendances.create({ talk: talk, role: "participant" })
