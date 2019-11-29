@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20191129190020) do
+ActiveRecord::Schema.define(version: 20191129194222) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -21,6 +21,16 @@ ActiveRecord::Schema.define(version: 20191129190020) do
     t.string "password_digest"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "attendances", force: :cascade do |t|
+    t.bigint "talk_id"
+    t.bigint "user_id"
+    t.string "role"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["talk_id"], name: "index_attendances_on_talk_id"
+    t.index ["user_id"], name: "index_attendances_on_user_id"
   end
 
   create_table "conferences", force: :cascade do |t|
@@ -42,5 +52,19 @@ ActiveRecord::Schema.define(version: 20191129190020) do
     t.index ["conference_id"], name: "index_talks_on_conference_id"
   end
 
+  create_table "users", force: :cascade do |t|
+    t.string "name"
+    t.string "company"
+    t.string "role"
+    t.string "email"
+    t.string "mobile"
+    t.string "password_digest"
+    t.string "bio"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_foreign_key "attendances", "talks"
+  add_foreign_key "attendances", "users"
   add_foreign_key "talks", "conferences"
 end
