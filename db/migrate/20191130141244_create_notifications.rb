@@ -3,7 +3,7 @@ class CreateNotifications < ActiveRecord::Migration[5.1]
     create_table :notifications do |t|
       t.references :user, foreign_key: true
       t.string :content
-      t.bool :status
+      t.boolean :checked
 
       t.timestamps
     end

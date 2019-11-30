@@ -37,7 +37,7 @@ end
 talk = conference.talks.first
 speaker = User.all.first
 speaker.attendances.create({ talk: talk, role: "speaker" })
-
+speaker.notifications.create({checked: false,content:"This is a notification"})
 moderator = User.all.second
 moderator.attendances.create({ talk: talk, role: "moderator" })
 

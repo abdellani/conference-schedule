@@ -3,9 +3,9 @@
 one:
   user: one
   content: MyString
-  status: 
+  checked: 
 
 two:
   user: two
   content: MyString
-  status: 
+  checked: 
