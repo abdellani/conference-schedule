@@ -9,19 +9,29 @@ Administrator.create({ name: "admin", email: "admin@admin.com", password: "abcde
 users = [{ name: "speaker", email: "test@test.com", password: "abcdef" },
          { name: "moderator", email: "test@test.com", password: "abcdef" },
          { name: "participant", email: "test@test.com", password: "abcdef" }]
-talks=[{ day: 1, start_time: "00:00", end_time: "01:00", location: "A", description: "blabla" },
-  { day: 2, start_time: "02:00", end_time: "03:00", location: "C", description: "blabla" },
-]
+talks = [{ day: 1, start_time: "00:00", end_time: "01:00", location: "A", description: "blabla" },
+         { day: 2, start_time: "02:00", end_time: "03:00", location: "C", description: "blabla" }]
+conferences = [{ date: "01/01/2020", location: "Earth" }]
+companies = [{ name: "fanta" }]
+
+companies.each do |company|
+  Company.create(company)
+end
+
+conferences.each do |conference|
+  Conference.create(conference)
+end
+
+conference = Conference.first
+company= Company.first
+conference.company_participations.create({role:"sponsor",company:company})
+
+talks.each do |talk|
+  conference.talks.create(talk)
+end
 
 users.each do |user|
   User.create(user)
-end
-
-Conference.create({ date: "01/01/2020", location: "Earth" })
-
-conference = Conference.all.first
-talks.each do |talk|
-  conference.talks.create(talk)
 end
 
 talk = conference.talks.first

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20191129224351) do
+ActiveRecord::Schema.define(version: 20191130122313) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -33,11 +33,32 @@ ActiveRecord::Schema.define(version: 20191129224351) do
     t.index ["user_id"], name: "index_attendances_on_user_id"
   end
 
+  create_table "companies", force: :cascade do |t|
+    t.string "name"
+    t.string "description"
+    t.string "website"
+    t.string "email"
+    t.string "address"
+    t.string "pobox"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "conferences", force: :cascade do |t|
     t.date "date"
     t.string "location"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "participations", force: :cascade do |t|
+    t.bigint "company_id"
+    t.bigint "conference_id"
+    t.string "role"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["company_id"], name: "index_participations_on_company_id"
+    t.index ["conference_id"], name: "index_participations_on_conference_id"
   end
 
   create_table "questions", force: :cascade do |t|
@@ -76,6 +97,8 @@ ActiveRecord::Schema.define(version: 20191129224351) do
 
   add_foreign_key "attendances", "talks"
   add_foreign_key "attendances", "users"
+  add_foreign_key "participations", "companies"
+  add_foreign_key "participations", "conferences"
   add_foreign_key "questions", "talks"
   add_foreign_key "questions", "users"
   add_foreign_key "talks", "conferences"
