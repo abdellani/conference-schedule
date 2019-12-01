@@ -11,7 +11,13 @@ users = [{ name: "speaker", email: "test@test.com", password: "abcdef" },
          { name: "participant", email: "test@test.com", password: "abcdef" }]
 talks = [{ day: 1, start_time: "00:00", end_time: "01:00", location: "A", description: "blabla" },
          { day: 2, start_time: "02:00", end_time: "03:00", location: "C", description: "blabla" }]
-conferences = [{ date: "01/01/2020", location: "Earth" }]
+conferences = [
+  { date: "01/01/2020", subject:"DevOps",description:"Introduction to docker",location: "University of Computer Science" },
+  { date: "01/01/2020", subject:"Security",description:"Introduction to Cryptography",location: "University of Computer Science" },
+  { date: "01/01/2020", subject:"System Administration",description:"Introduction in SE-Linux",location: "University of Computer Science" },
+  { date: "01/01/2020", subject:"Web development",description:"Introduction into Rails",location: "University of Computer Science" }
+]
+
 companies = [{ name: "fanta" }]
 
 companies.each do |company|
