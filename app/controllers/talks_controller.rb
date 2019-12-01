@@ -10,9 +10,9 @@ class TalksController < ApplicationController
     render json: Conference.find(params[:conference_id]).
              talks.find(params[:id]).
              to_json(
-               only:[:id, :day, :start_time, :end_time, :description, :location],
+             only: [:id, :day, :start_time, :end_time, :description, :location],
              include: {
-               conference:{only:[:subject,:description]},
+               conference: { only: [:subject, :description] },
                speakers: { only: [:id, :name] },
                moderators: { only: [:id, :name] },
              },
