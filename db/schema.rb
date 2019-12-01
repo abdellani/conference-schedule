@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20191130141244) do
+ActiveRecord::Schema.define(version: 20191201113502) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -80,6 +80,19 @@ ActiveRecord::Schema.define(version: 20191130141244) do
     t.index ["user_id"], name: "index_questions_on_user_id"
   end
 
+  create_table "reviews", force: :cascade do |t|
+    t.bigint "speaker_id"
+    t.bigint "participant_id"
+    t.bigint "talk_id"
+    t.integer "evaluation"
+    t.string "note"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["participant_id"], name: "index_reviews_on_participant_id"
+    t.index ["speaker_id"], name: "index_reviews_on_speaker_id"
+    t.index ["talk_id"], name: "index_reviews_on_talk_id"
+  end
+
   create_table "talks", force: :cascade do |t|
     t.integer "day"
     t.time "start_time"
@@ -111,5 +124,8 @@ ActiveRecord::Schema.define(version: 20191130141244) do
   add_foreign_key "participations", "conferences"
   add_foreign_key "questions", "talks"
   add_foreign_key "questions", "users"
+  add_foreign_key "reviews", "talks"
+  add_foreign_key "reviews", "users", column: "participant_id"
+  add_foreign_key "reviews", "users", column: "speaker_id"
   add_foreign_key "talks", "conferences"
 end
