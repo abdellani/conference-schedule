@@ -1,7 +1,7 @@
 import React, { Component } from "react"
 import axios from "axios"
-
-class ConferencesList extends Component {
+import {Link} from "react-router-dom"
+class ConferencesIndex extends Component {
   constructor(props) {
     super(props)
     this.state = {
@@ -9,7 +9,7 @@ class ConferencesList extends Component {
     }
   }
   componentDidMount() {
-    axios.get("api/conferences").
+    axios.get("/api/conferences").
       then(response => this.setState({ conferences: response.data }))
   }
   render() {
@@ -23,6 +23,7 @@ class ConferencesList extends Component {
             <li>{c.subject}</li>
             <li>{c.location}</li>
             <li>{c.description}</li>
+            <li><Link to={`/conferences/${c.id}`} >Details</Link></li>
           </ul>
         )
       }</div>
@@ -30,4 +31,4 @@ class ConferencesList extends Component {
   }
 }
 
-export default ConferencesList;
+export default ConferencesIndex;
