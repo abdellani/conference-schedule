@@ -7,8 +7,7 @@ class Conferences::TalksController < ApplicationController
   end
 
   def show
-    render json: Conference.find(params[:conference_id]).
-             talks.find(params[:id]).
+    render json: Talk.find_by_conference_id_and_id(params[:conference_id], params[:id]).
              to_json(
              only: [:id, :day, :start_time, :end_time, :description, :location],
              include: {
