@@ -1,0 +1,2 @@
+module Conferences::ExhibitorsHelper
+end

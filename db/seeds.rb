@@ -32,6 +32,7 @@ end
 conference = Conference.first
 company = Company.first
 conference.company_participations.create({ role: "sponsor", company: company })
+conference.company_participations.create({ role: "exhibitor", company: company })
 
 talks.each do |talk|
   conference.talks.create(talk)
