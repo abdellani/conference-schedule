@@ -1,4 +1,4 @@
-class QuestionsController < ApplicationController
+class Conferences::Talks::QuestionsController < ApplicationController
   def index
     render json: Conference.find(params[:conference_id]).
              talks.find(params[:talk_id]).
