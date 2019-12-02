@@ -1,8 +1,11 @@
 class Conferences::TalksController < ApplicationController
   def index
     render json: Conference.find(params[:conference_id]).
-             talks.select(
-             :id, :day, :start_time, :end_time, :description, :location
+             talks.to_json(
+             only: [:id, :day, :start_time, :end_time, :description, :location],
+             include: {
+              speakers: { only: [:id, :name] }
+             }
            )
   end
 

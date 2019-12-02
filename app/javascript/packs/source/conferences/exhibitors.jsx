@@ -5,46 +5,24 @@ class ConferencesExhibitors extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      conference: undefined
+      exhibitors: []
     }
   }
   componentDidMount() {
     let { id } = this.props.match.params
-    axios.get(`/api/conferences/${id}`).
-    then(response => this.setState({ conference: response.data }))
+    axios.get(`/api/conferences/${id}/exhibitors`).
+    then(response => this.setState({ exhibitors: response.data }))
   }
   render() {
-    let {conference}= this.state
-    if(!conference){
-    return (
-      <div></div>
-    )}
-    console.log(conference)
-    let {date,description,location,subject,talks}=conference
+    let {exhibitors}= this.state
     return(<div>
-      <ul>
-        <li>
-          {date}
-        </li>
-        <li>
-          {subject}
-        </li>
-        <li>
-          {description}
-        </li>
-        <li>
-          {location}
-        </li>
-      </ul>
       {
-        talks.map(
-          t=>
-          <ul key={t.id}>
-            <li>{t.day}</li>
-            <li>{t.description}</li>
-            <li>{t.location}</li>
-            <li>{t.start_time}</li>
-            <li>{t.end_time}</li>
+        exhibitors.map(
+          e=>
+          <ul key={e.id}>
+            <li>{e.name}</li>
+            <li>{e.description}</li>
+            <li>{e.website}</li>
           </ul>
         )
       }
