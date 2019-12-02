@@ -9,10 +9,19 @@ import ConferencesExhibitors from "./conferences/exhibitors"
 import ConferencesSponsors from "./conferences/sponsors"
 import ConferencesTalksIndex from "./conferences/talks/index"
 import ConferencesTalksShow from "./conferences/talks/show"
-
+import ConferencesTalksQuestionsIndex from "./conferences/talks/questions/index"
+import ConferencesTalksAttendancesIndex from "./conferences/talks/attendances"
 const App = () =>
   <Router>
     <Switch>
+      <Route
+        path="/conferences/:id_conference/talks/:id/attendances"
+        component={ConferencesTalksAttendancesIndex}
+      />
+      <Route
+        path="/conferences/:id_conference/talks/:id/questions"
+        component={ConferencesTalksQuestionsIndex}
+      />
       <Route
         path="/conferences/:id_conference/talks/:id"
         component={ConferencesTalksShow}
