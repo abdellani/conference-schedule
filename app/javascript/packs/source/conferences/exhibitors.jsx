@@ -1,8 +1,7 @@
 import React, { Component } from "react"
 import axios from "axios"
-import { end } from "worker-farm";
 
-class ConferencesShow extends Component {
+class ConferencesExhibitors extends Component {
   constructor(props) {
     super(props)
     this.state = {
@@ -53,4 +52,4 @@ class ConferencesShow extends Component {
   }
 }
 
-export default ConferencesShow;
+export default ConferencesExhibitors;

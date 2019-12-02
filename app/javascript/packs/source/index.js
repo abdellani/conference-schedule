@@ -5,14 +5,14 @@ import {
   Route
 } from "react-router-dom"
 import ConferencesIndex from "./conferences/"
-import ConferencesShow from "./conferences/show"
+import ConferencesExhibitors from "./conferences/exhibitors"
 
 const App = () =>
   <Router>
     <Switch>
       <Route
-        path="/conferences/:id"
-        component={ConferencesShow}
+        path="/conferences/:id/exhibitors"
+        component={ConferencesExhibitors}
       />
       <Route
         path="/conferences"
@@ -20,5 +20,5 @@ const App = () =>
       />
     </Switch>
   </Router>
-    export default App;
-    
+export default App;
+
