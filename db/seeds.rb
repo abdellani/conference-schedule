@@ -6,10 +6,10 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 Administrator.create({ name: "admin", email: "admin@admin.com", password: "abcdef" })
-users = [{ name: "speaker", email: "test@test.com", password: "abcdef" },
-         { name: "speaker1", email: "test@test.com", password: "abcdef" },
-         { name: "moderator", email: "test@test.com", password: "abcdef" },
-         { name: "participant", email: "test@test.com", password: "abcdef" }]
+users = [{ name: "speaker", email: "test@test.com",role:"Senior Developer", password: "abcdef" },
+         { name: "speaker1", email: "test@test.com",role:"Senior Developer", password: "abcdef" },
+         { name: "moderator", email: "test@test.com",role:"Teacher", password: "abcdef" },
+         { name: "participant", email: "test@test.com",role:"Student", password: "abcdef" }]
 talks = [{ day: 1, start_time: "00:00", end_time: "01:00", location: "A", description: "blabla" },
          { day: 2, start_time: "02:00", end_time: "03:00", location: "C", description: "blabla" }]
 conferences = [

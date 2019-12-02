@@ -1,0 +1,24 @@
+$bg-color:#f8f8ff;
+
+$blue:#35bee0;
+$violet:#59499e;
+$green:#5cba47;
+.text-blue1{
+  color:$blue;
+}
+.bg-blue1{
+  background-color:$blue;
+}
+.text-violet1{
+  color:$violet;
+}
+.bg-violet1{
+  background-color:$violet;
+}
+.text-green1{
+  color:$green;
+}
+
+body{
+  background-color:$bg-color;
+}

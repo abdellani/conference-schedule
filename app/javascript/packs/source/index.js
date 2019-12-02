@@ -15,7 +15,7 @@ import ConferencesTalksIndex from "./conferences/talks/index"
 import ConferencesTalksShow from "./conferences/talks/show"
 import ConferencesTalksQuestionsIndex from "./conferences/talks/questions/index"
 import ConferencesTalksAttendancesIndex from "./conferences/talks/attendances"
-
+import "./scss/index.scss"
 const App = () =>
   <Router>
     <Switch>

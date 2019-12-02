@@ -4,7 +4,7 @@ class Conferences::TalksController < ApplicationController
              talks.to_json(
              only: [:id, :day, :start_time, :end_time, :description, :location],
              include: {
-              speakers: { only: [:id, :name] }
+              speakers: { only: [:id, :name,:role] }
              }
            )
   end
@@ -15,8 +15,8 @@ class Conferences::TalksController < ApplicationController
              only: [:id, :day, :start_time, :end_time, :description, :location],
              include: {
                conference: { only: [:subject, :description] },
-               speakers: { only: [:id, :name] },
-               moderators: { only: [:id, :name] },
+               speakers: { only: [:id, :name,:role] },
+               moderators: { only: [:id, :name,:role] },
              },
            )
   end
