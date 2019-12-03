@@ -2,7 +2,7 @@ import React, { Component } from "react"
 import axios from "axios"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faChevronDown, faPodcast, faLandmark, faPlusCircle } from '@fortawesome/free-solid-svg-icons';
-
+import {formatTime} from "../../utils"
 class ConferencesTalksIndex extends Component {
   constructor(props) {
     super(props)
@@ -12,12 +12,9 @@ class ConferencesTalksIndex extends Component {
   }
   componentDidMount() {
     let { id } = this.props.match.params
+    // console.log( )
     axios.get(`/api/conferences/${id}/talks`).
       then(response => this.setState({ talks: response.data }))
-  }
-  formatTime(time) {
-    return new Date(time).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
-
   }
   render() {
     let { talks } = this.state
@@ -56,12 +53,16 @@ class ConferencesTalksIndex extends Component {
                       <div className=" my-1 px-1 py-1 w-100" key={t.id}>
                         <div className="pt-1 pb-2">
                           <small className="text-blue1 font-weight-bolder">
-                            {this.formatTime(t.start_time)} - {this.formatTime(t.end_time)}
+                            {formatTime(t.start_time)} - {formatTime(t.end_time)}
                           </small>
                         </div>
-                        <div className="d-flex flex-wrap w-100">
-
-                          <div className="d-flex w-min-80 px-2 talk-title py-2 flex-column flex-nowrap align-items-center bg-white shadow-sm">
+                        <div
+                          className="d-flex flex-wrap w-100 shadow-sm"
+                        >
+                          <div
+                            className="d-flex w-min-80 px-2 talk-title py-2 flex-column flex-nowrap align-items-center bg-white "
+                            onClick={() => this.props.history.push(`${this.props.match.url}/${t.id}`)}
+                          >
                             <div className="font-weight-bolder text-violet1 w-100 ">
                               {t.description}
                             </div>
@@ -82,7 +83,7 @@ class ConferencesTalksIndex extends Component {
                           </div>
                           <div className="w-min-20 bg-green1 add-to-schedule-button text-nowrap d-flex align-items-center justify-content-center ">
                             <h3 >
-                              <FontAwesomeIcon icon={faPlusCircle} /> 
+                              <FontAwesomeIcon icon={faPlusCircle} />
                             </h3>
                           </div>
                         </div>
