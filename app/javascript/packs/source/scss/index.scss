@@ -3,12 +3,30 @@ $bg-color:#f8f8ff;
 $blue:#35bee0;
 $violet:#59499e;
 $green:#5cba47;
+$pink: #ff6ea1;
+
+.w-min-20{
+  min-width: 20%;
+}
+.w-min-50{
+  min-width: 50%;
+}
+.w-min-80{
+  min-width: 80%;
+}
 .text-blue1{
   color:$blue;
 }
 .bg-blue1{
   background-color:$blue;
 }
+.text-pink1{
+  color:$pink;
+}
+.bg-pink1{
+  background-color:$pink;
+}
+
 .text-violet1{
   color:$violet;
 }
@@ -18,7 +36,21 @@ $green:#5cba47;
 .text-green1{
   color:$green;
 }
-
+.bg-green1{
+  background-color:$green;
+}
+.add-to-schedule-button{
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+.talk-title{
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+}
 body{
   background-color:$bg-color;
+  *:focus { outline: none; }
+  .show-day-schedule-button.collapsed{
+    transform:rotate(-90deg);
+  }
 }
