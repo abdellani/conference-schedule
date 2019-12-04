@@ -1,9 +1,11 @@
-const LOGIN=(name)=>{
-  return {type:"LOGIN",
-  name}
+const LOGIN = (name) => {
+  return {
+    type: "LOGIN",
+    name
+  }
 }
-const LOGOUT=()=>{
-  return {type:"LOGOUT"}
+const LOGOUT = () => {
+  return { type: "LOGOUT" }
 }
 
-export {LOGIN,LOGOUT};
+export { LOGIN, LOGOUT };

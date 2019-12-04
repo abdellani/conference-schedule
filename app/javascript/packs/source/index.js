@@ -24,7 +24,10 @@ import reducer from "./utils/reducer"
 import { Provider } from "react-redux"
 import "./scss/index.scss"
 
-let store = createStore(reducer)
+let store = createStore(
+  reducer,
+  window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
+)
 
 const App = () =>
   <Provider store={store}>

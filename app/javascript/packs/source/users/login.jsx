@@ -2,7 +2,9 @@ import React, { Fragment } from "react"
 import axios from "axios"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSignInAlt, faWindowClose } from "@fortawesome/free-solid-svg-icons";
-import Navbar from "../navbar"
+import Navbar from "../navbar";
+import {connect} from "react-redux";
+import {LOGIN} from "../utils/actions"
 class UsersLogin extends React.Component {
   constructor(props) {
     super(props);
@@ -39,6 +41,7 @@ class UsersLogin extends React.Component {
           })
         }
         else if (response.code == 200) {
+          this.props.login(response.user.name)
           this.props.history.push("/conferences")
         }
       })
@@ -120,4 +123,11 @@ class UsersLogin extends React.Component {
   }
 }
 
-export default UsersLogin;
+const mapDispatchToProps= (dispatch)=>{
+  return {
+    login: (name)=>{ 
+      dispatch(LOGIN(name))
+    }
+  }
+}
+export default connect(null,mapDispatchToProps)(UsersLogin);
