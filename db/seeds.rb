@@ -23,7 +23,11 @@ companies = [
   { 
     name: "company1",
     description:"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Integer enim neque volutpat ac tincidunt vitae semper quis lectus. Vestibulum lectus mauris ultrices eros in cursus turpis massa. Malesuada bibendum arcu vitae elementum curabitur vitae nunc sed. Sed euismod nisi porta lorem. Magna fringilla urna porttitor rhoncus. Suspendisse sed",
-    website:"www.company1.com" 
+    website:"www.company1.com",
+    telephone:"+000000000",
+    email:"company1@email.com",
+    address:"Lorem ipsum dolor sit amet",
+    pobox:"00000"
     }
   ]
 

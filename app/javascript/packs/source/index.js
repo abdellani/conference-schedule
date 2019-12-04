@@ -22,11 +22,11 @@ const App = () =>
   <Router>
     <Switch>
       <Route
-        path="/conferences/:id_conference/talks/:id/questions"
+        path="/conferences/:conference_id/talks/:id/questions"
         component={ConferencesTalksQuestionsIndex}
       />
       <Route
-        path="/conferences/:id_conference/talks/:id"
+        path="/conferences/:conference_id/talks/:id"
         component={ConferencesTalksShow}
       />
       <Route

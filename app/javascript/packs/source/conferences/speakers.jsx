@@ -16,7 +16,7 @@ class ConferencesSpeakersIndex extends Component {
       then(response => this.setState({ speakers: response.data }))
   }
   render() {
-    let { attendances: speakers } = this.state
+    let { speakers } = this.state
     if (!speakers) {
       return (<div></div>)
     }
