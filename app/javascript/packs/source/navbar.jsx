@@ -1,8 +1,9 @@
 import React, { Fragment } from "react"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faBars, faStore, faHandHoldingUsd, faUsers, faVolumeUp, faChalkboardTeacher, faCalendar, faHome, faSignOutAlt, faIdBadge } from "@fortawesome/free-solid-svg-icons";
+import { faBars, faStore, faHandHoldingUsd, faUsers, faVolumeUp, faChalkboardTeacher, faCalendar, faHome, faSignOutAlt, faIdBadge, faSignInAlt } from "@fortawesome/free-solid-svg-icons";
 import { Link } from "react-router-dom";
-const navbar = ({ conference_id = -1, talk_id = -1, conference_selected = true }) =>
+import { faPlusSquare } from "@fortawesome/free-regular-svg-icons";
+const navbar = ({ conference_id = -1, talk_id = -1, conference_selected = true, login = true }) =>
   <div>
     <div className="bg-violet1 d-flex flex-row-reverse py-2 px-2 ">
       <button className="bg-transparent border-0 text-white"
@@ -17,14 +18,24 @@ const navbar = ({ conference_id = -1, talk_id = -1, conference_selected = true }
     </div>
     <div className="collapse" id="navbar">
       <div className="shadow-sm bg-white py-2 px-2 d-flex flex-wrap ">
-        {item(faHome, "Home", "/conferences")}
-        { conference_selected && conferenceMenu(conference_id)}
-        {item(faIdBadge, "Profile")}
-        {item(faSignOutAlt, "Logout")}
+        {login && item(faHome, "Home", "/conferences")}
+        {login && conference_selected && conferenceMenu(conference_id)}
+        {login && userMenu()}
+        {!login && guestMenu()}
       </div>
     </div>
   </div>
+const guestMenu = () =>
+  <Fragment>
+    {item(faSignInAlt, "Login", "/login")}
+    {item(faPlusSquare, "Signup", "/signup")}
+  </Fragment>
 
+const userMenu = () =>
+  <Fragment>
+    {item(faIdBadge, "Profile")}
+    {item(faSignOutAlt, "Logout")}
+  </Fragment>
 const conferenceMenu = (conference_id) =>
   <Fragment>
     {item(faCalendar, "Agenda", `/conferences/${conference_id}/talks`)}
@@ -32,7 +43,6 @@ const conferenceMenu = (conference_id) =>
     {item(faHandHoldingUsd, "Sponsors", `/conferences/${conference_id}/sponsors`)}
     {item(faUsers, "Attendees", `/conferences/${conference_id}/attendances`)}
     {item(faChalkboardTeacher, "Speakers", `/conferences/${conference_id}/speakers`)}
-
   </Fragment>
 const item = (icon, title, link = "#") =>
   <Link to={link}>

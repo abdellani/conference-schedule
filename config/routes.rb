@@ -1,7 +1,10 @@
 Rails.application.routes.draw do
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   scope "/api" do
-    resources :users,only: [:create]
+    resources :users,only: [:create] 
+    scope :users do
+      resources :sessions,only: [:create],module: :users
+    end
     resources :conferences, only: [:show, :index] do
       resources :sponsors,only:[:index],module: :conferences
       resources :exhibitors,only:[:index],module: :conferences

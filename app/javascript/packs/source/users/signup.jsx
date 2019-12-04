@@ -1,7 +1,9 @@
-import React from "react"
+import React,{Fragment} from "react"
 import axios from "axios"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSignInAlt, faWindowClose } from "@fortawesome/free-solid-svg-icons";
+import Navbar from "../navbar"
+
 class UsersSignup extends React.Component {
   constructor(props) {
     super(props);
@@ -14,7 +16,7 @@ class UsersSignup extends React.Component {
       password: "",
       bio: "",
       errors: {},
-      success:true
+      success: false
     }
   }
   handleChange(e) {
@@ -42,7 +44,7 @@ class UsersSignup extends React.Component {
       then(response => response.data).
       then(response => {
         if (response.code == 400) {
-          this.setState({ 
+          this.setState({
             errors: response.errors,
           })
         } else if (response.code == 200) {
@@ -55,7 +57,7 @@ class UsersSignup extends React.Component {
             password: "",
             bio: "",
             errors: {},
-            success:true
+            success: true
           })
 
         }
@@ -63,56 +65,55 @@ class UsersSignup extends React.Component {
       )
 
   }
-  showSuccessNotification(){
-    let {success}=this.state
-    if(!success){
+  showSuccessNotification() {
+    let { success } = this.state
+    if (!success) {
       return null;
     }
     return (
-    <div 
-    className="user-creation-success-notification bg-violet1 d-flex \
+      <div
+        className="user-creation-success-notification bg-violet1 d-flex \
     flex-column align-items-center justify-content-center p-4"
-    >
-      <div className="my-4" >
-        <h3 className="font-weight-bolder text-white">
+      >
+        <div className="my-4" >
+          <h3 className="font-weight-bolder text-white">
 
-        Your account is created 
+            Your account is created
         </h3>
-      </div>
-      <div className="d-flex justify-content-around w-100 my-4">
-        <div 
-        className="d-flex flex-column align-items-center text-success"
-        onClick={()=>this.props.history.push("/login")}
-        >
-          <div >
-            <h2>
-            <FontAwesomeIcon icon={faSignInAlt}/>
-            </h2>
-          </div>
-          <div>
-          <h3 className="font-weight-bolder">
-            Login
-            </h3>
-          </div>
         </div>
-
-        <div 
-        className="d-flex flex-column align-items-center text-danger"
-        onClick={()=>this.setState({success:false})}
-
-        >
-          <div>
-          <h2>
-            <FontAwesomeIcon icon={faWindowClose}/>
-            </h2>
-          </div>
-          <div>
-          <h3 className="font-weight-bolder">
-            Close
+        <div className="d-flex justify-content-around w-100 my-4">
+          <div
+            className="d-flex flex-column align-items-center text-success"
+            onClick={() => this.props.history.push("/login")}
+          >
+            <div >
+              <h2>
+                <FontAwesomeIcon icon={faSignInAlt} />
+              </h2>
+            </div>
+            <div>
+              <h3 className="font-weight-bolder">
+                Login
             </h3>
+            </div>
           </div>
-        </div>      </div>
-    </div>
+
+          <div
+            className="d-flex flex-column align-items-center text-danger"
+            onClick={() => this.setState({ success: false })}
+          >
+            <div>
+              <h2>
+                <FontAwesomeIcon icon={faWindowClose} />
+              </h2>
+            </div>
+            <div>
+              <h3 className="font-weight-bolder">
+                Close
+            </h3>
+            </div>
+          </div>      </div>
+      </div>
     )
   }
   showErrors() {
@@ -150,6 +151,8 @@ class UsersSignup extends React.Component {
       bio
     } = this.state
     return (
+      <Fragment>
+        <Navbar login={false}  />      
       <div>
         {this.showSuccessNotification()}
         <div className="bg-violet1 p-4">
@@ -245,6 +248,7 @@ class UsersSignup extends React.Component {
           </button>
         </form>
       </div>
+      </Fragment>
     )
   }
 }
