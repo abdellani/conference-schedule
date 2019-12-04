@@ -1,8 +1,9 @@
-import React, { Component } from "react"
+import React, { Component,Fragment } from "react"
 import axios from "axios"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faChevronDown, faPodcast, faLandmark, faPlusCircle } from '@fortawesome/free-solid-svg-icons';
 import {formatTime} from "../../utils"
+import Navbar from "../../navbar"
 class ConferencesTalksIndex extends Component {
   constructor(props) {
     super(props)
@@ -12,7 +13,6 @@ class ConferencesTalksIndex extends Component {
   }
   componentDidMount() {
     let { id } = this.props.match.params
-    // console.log( )
     axios.get(`/api/conferences/${id}/talks`).
       then(response => this.setState({ talks: response.data }))
   }
@@ -21,6 +21,8 @@ class ConferencesTalksIndex extends Component {
     let days = new Set();
     talks.forEach(t => days.add(t.day))
     return (
+      <Fragment>
+        <Navbar/>
       <div className="px-3">
         {
           [...days].map(day =>
@@ -94,6 +96,7 @@ class ConferencesTalksIndex extends Component {
             </div>
           )
         }</div>
+        </Fragment>
     )
   }
 }
