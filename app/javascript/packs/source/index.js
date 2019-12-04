@@ -18,58 +18,62 @@ import ConferencesTalksShow from "./conferences/talks/show"
 import ConferencesTalksQuestionsIndex from "./conferences/talks/questions/index"
 import UsersSignup from "./users/signup"
 import UsersLogin from "./users/login"
-import Privateroute from "./utils/privateroute"
-import { createStore } from "redux"
+import PrivateRoute from "./utils/privateroute"
+import GuestRoute from "./utils/guestroute"
 import reducer from "./utils/reducer"
 import { Provider } from "react-redux"
+import { compose, createStore } from 'redux';
+import persistState from 'redux-localstorage'
 import "./scss/index.scss"
 
+
 let store = createStore(
-  reducer,
-  window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
+  reducer, compose(persistState(),
+    window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
+  )
 )
 
 const App = () =>
   <Provider store={store}>
     <Router>
       <Switch>
-        <Privateroute
+        <PrivateRoute
           path="/conferences/:conference_id/talks/:id/questions"
           component={ConferencesTalksQuestionsIndex}
         />
-        <Privateroute
+        <PrivateRoute
           path="/conferences/:conference_id/talks/:id"
           component={ConferencesTalksShow}
         />
-        <Privateroute
+        <PrivateRoute
           path="/conferences/:id/talks"
           component={ConferencesTalksIndex}
         />
-        <Privateroute
+        <PrivateRoute
           path="/conferences/:id/attendances"
           component={ConferencesAttendancesIndex}
         />
-        <Privateroute
+        <PrivateRoute
           path="/conferences/:id/speakers"
           component={ConferencesSpeakersIndex}
         />
-        <Privateroute
+        <PrivateRoute
           path="/conferences/:id/sponsors"
           component={ConferencesSponsors}
         />
-        <Privateroute
+        <PrivateRoute
           path="/conferences/:id/exhibitors"
           component={ConferencesExhibitors}
         />
-        <Privateroute
+        <PrivateRoute
           path="/conferences"
           component={ConferencesIndex}
         />
-        <Route
+        <GuestRoute
           path="/signup"
           component={UsersSignup}
         />
-        <Route
+        <GuestRoute
           path="/login"
           component={UsersLogin}
         />
