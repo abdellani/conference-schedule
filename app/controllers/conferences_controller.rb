@@ -1,4 +1,5 @@
 class ConferencesController < ApplicationController
+  before_action :is_logged_in?
   def index
     render json: Conference.all.to_json(
       only: [:id,:date,:location,:subject,:description]

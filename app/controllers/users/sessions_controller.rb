@@ -1,12 +1,13 @@
 class Users::SessionsController < ApplicationController
   skip_before_action :verify_authenticity_token, only: [:create]
   def create
-    @user = User.find_by_email(params[:user][:email])
-    if @user and @user.authenticate(params[:user][:password])
+    user = User.find_by_email(params[:user][:email])
+    if user and user.authenticate(params[:user][:password])
+      login user
       render json:{
           code: 200,
           user:{
-            name:@user.name
+            name:user.name
           }
         }
       

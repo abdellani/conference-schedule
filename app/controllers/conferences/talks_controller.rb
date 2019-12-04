@@ -1,4 +1,5 @@
 class Conferences::TalksController < ApplicationController
+  before_action :is_logged_in?
   def index
     render json: Conference.find(params[:conference_id]).
              talks.to_json(
