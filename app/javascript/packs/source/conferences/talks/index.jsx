@@ -18,11 +18,12 @@ class ConferencesTalksIndex extends Component {
   }
   render() {
     let { talks } = this.state
+    let { id } = this.props.match.params
     let days = new Set();
     talks.forEach(t => days.add(t.day))
     return (
       <Fragment>
-        <Navbar/>
+        <Navbar conference_id={id}/>
       <div className="px-3">
         {
           [...days].map(day =>
