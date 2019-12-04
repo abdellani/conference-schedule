@@ -2,7 +2,7 @@ import React from "react"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBars, faStore, faHandHoldingUsd, faUsers, faVolumeUp, faChalkboardTeacher, faCalendar, faHome, faSignOutAlt, faIdBadge } from "@fortawesome/free-solid-svg-icons";
 import {Link} from "react-router-dom";
-const navbar = ({conference_id}) =>
+const navbar = ({conference_id = -1,talk_id = -1 }) =>
   <div>
     <div className="bg-violet1 d-flex flex-row-reverse py-2 px-2 ">
       <button className="bg-transparent border-0 text-white"
@@ -22,7 +22,7 @@ const navbar = ({conference_id}) =>
         {item(faStore, "Exhibitors",`/conferences/${conference_id}/exhibitors`)}
         {item(faHandHoldingUsd, "Sponsors",`/conferences/${conference_id}/sponsors`)}
         {item(faUsers, "Attendees",`/conferences/${conference_id}/attendances`)}
-        {item(faChalkboardTeacher, "Speakers")}
+        {item(faChalkboardTeacher, "Speakers",`/conferences/${conference_id}/speakers`)}
         {item(faIdBadge, "Profile")}
         {item(faSignOutAlt, "Logout")}
       </div>

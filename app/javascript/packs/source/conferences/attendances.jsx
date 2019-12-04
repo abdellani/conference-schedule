@@ -1,8 +1,9 @@
-import React, { Component } from "react"
+import React, { Component, Fragment } from "react"
 import axios from "axios"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faUser } from '@fortawesome/free-regular-svg-icons';
-class ConferencesTalksAttendancesIndex extends Component {
+import Navbar from "../navbar"
+class ConferencesAttendancesIndex extends Component {
   constructor(props) {
     super(props)
     this.state = {
@@ -10,8 +11,8 @@ class ConferencesTalksAttendancesIndex extends Component {
     }
   }
   componentDidMount() {
-    let { id_conference, id } = this.props.match.params
-    axios.get(`/api/conferences/${id_conference}/talks/${id}/attendances`).
+    let { id } = this.props.match.params
+    axios.get(`/api/conferences/${id}/attendances`).
       then(response => this.setState({ attendances: response.data }))
   }
   render() {
@@ -19,14 +20,19 @@ class ConferencesTalksAttendancesIndex extends Component {
     if (!attendances) {
       return (<div></div>)
     }
+    let { id } = this.props.match.params
+
     return (
       <div>
-        attendances
+        <Navbar conference_id={id} />
+        <div className="bg-violet1 text-white font-weight-bolder px-3 py-2 pb-3">
+            Attendances
+        </div>
         <div className="px-2 w-100">
           {
             attendances.map(
               a =>
-                <div className="d-flex align-items-center bg-white my-2 shadow-sm">
+                <div key={a.id} className="d-flex align-items-center bg-white my-2 shadow-sm">
                   <div className="m-2 mx-3  px-2 py-1 h3 shadow-sm rounded-circle">
                     <FontAwesomeIcon icon={faUser} />
                   </div>
@@ -41,4 +47,4 @@ class ConferencesTalksAttendancesIndex extends Component {
   }
 }
 
-export default ConferencesTalksAttendancesIndex;
+export default ConferencesAttendancesIndex;
