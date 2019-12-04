@@ -2,7 +2,7 @@ import React, { Component } from "react"
 import axios from "axios"
 import Navbar from "../navbar"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faGlobe, faBuilding, faChevronDown } from "@fortawesome/free-solid-svg-icons";
+import {  faBuilding, faChevronDown } from "@fortawesome/free-solid-svg-icons";
 
 class ConferencesSponsors extends Component {
   constructor(props) {

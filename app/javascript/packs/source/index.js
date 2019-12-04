@@ -16,6 +16,7 @@ import ConferencesSpeakersIndex from "./conferences/speakers"
 import ConferencesTalksIndex from "./conferences/talks/index"
 import ConferencesTalksShow from "./conferences/talks/show"
 import ConferencesTalksQuestionsIndex from "./conferences/talks/questions/index"
+import UsersSignup from "./users/signup"
 
 import "./scss/index.scss"
 const App = () =>
@@ -40,7 +41,7 @@ const App = () =>
       <Route
         path="/conferences/:id/speakers"
         component={ConferencesSpeakersIndex}
-      />      
+      />
       <Route
         path="/conferences/:id/sponsors"
         component={ConferencesSponsors}
@@ -52,6 +53,10 @@ const App = () =>
       <Route
         path="/conferences"
         component={ConferencesIndex}
+      />
+      <Route
+        path="/signup"
+        component={UsersSignup}
       />
     </Switch>
   </Router>
