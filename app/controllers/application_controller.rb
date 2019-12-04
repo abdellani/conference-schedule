@@ -7,6 +7,6 @@ class ApplicationController < ActionController::Base
     @current_user |=session[:id] && User.find(session[:id])
   end
   def is_logged_in?
-    render json: {code:401 }unless current_user
+    render json: {code:401 } unless current_user
   end
 end

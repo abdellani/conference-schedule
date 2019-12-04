@@ -18,40 +18,41 @@ import ConferencesTalksShow from "./conferences/talks/show"
 import ConferencesTalksQuestionsIndex from "./conferences/talks/questions/index"
 import UsersSignup from "./users/signup"
 import UsersLogin from "./users/login"
+import Privateroute from "./utils/privateroute"
 
 import "./scss/index.scss"
 const App = () =>
   <Router>
     <Switch>
-      <Route
+      <Privateroute
         path="/conferences/:conference_id/talks/:id/questions"
         component={ConferencesTalksQuestionsIndex}
       />
-      <Route
+      <Privateroute
         path="/conferences/:conference_id/talks/:id"
         component={ConferencesTalksShow}
       />
-      <Route
+      <Privateroute
         path="/conferences/:id/talks"
         component={ConferencesTalksIndex}
       />
-      <Route
+      <Privateroute
         path="/conferences/:id/attendances"
         component={ConferencesAttendancesIndex}
       />
-      <Route
+      <Privateroute
         path="/conferences/:id/speakers"
         component={ConferencesSpeakersIndex}
       />
-      <Route
+      <Privateroute
         path="/conferences/:id/sponsors"
         component={ConferencesSponsors}
       />
-      <Route
+      <Privateroute
         path="/conferences/:id/exhibitors"
         component={ConferencesExhibitors}
       />
-      <Route
+      <Privateroute
         path="/conferences"
         component={ConferencesIndex}
       />
