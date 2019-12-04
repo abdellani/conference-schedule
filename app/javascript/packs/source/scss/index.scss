@@ -52,6 +52,12 @@ i{
   border-top-left-radius: 10px;
   border-bottom-left-radius: 10px;
 }
+.user-creation-success-notification{
+  height: 100vh;
+  width: 100vw;
+  position: fixed;
+  z-index: 12;
+}
 body{
   background-color:$bg-color;
   *:focus { outline: none; }
