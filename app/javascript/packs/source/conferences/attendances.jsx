@@ -3,6 +3,7 @@ import axios from "axios"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faUser } from '@fortawesome/free-regular-svg-icons';
 import Navbar from "../navbar"
+import fetcher from "../utils/fetcher"
 class ConferencesAttendancesIndex extends Component {
   constructor(props) {
     super(props)
@@ -12,8 +13,10 @@ class ConferencesAttendancesIndex extends Component {
   }
   componentDidMount() {
     let { id } = this.props.match.params
-    axios.get(`/api/conferences/${id}/attendances`).
-      then(response => this.setState({ attendances: response.data }))
+    fetcher.get(
+      `/api/conferences/${id}/attendances`,
+      (data) => this.setState({ attendances: data })
+    )
   }
   render() {
     let { attendances } = this.state
@@ -26,7 +29,7 @@ class ConferencesAttendancesIndex extends Component {
       <div>
         <Navbar conference_id={id} />
         <div className="bg-violet1 text-white font-weight-bolder px-3 py-2 pb-3">
-            Attendances
+          Attendances
         </div>
         <div className="px-2 w-100">
           {

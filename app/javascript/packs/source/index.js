@@ -27,7 +27,7 @@ import persistState from 'redux-localstorage'
 import "./scss/index.scss"
 
 
-let store = createStore(
+const store = createStore(
   reducer, compose(persistState(),
     window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
   )
@@ -82,4 +82,4 @@ const App = () =>
   </Provider>
 
 export default App;
-
+export {store};
