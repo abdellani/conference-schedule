@@ -4,7 +4,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faUser, faQuestionCircle, faCommentDots, faClock } from '@fortawesome/free-regular-svg-icons';
 import { Link } from "react-router-dom"
 import { formatTime } from "../../utils"
-import { faUniversity, faPlus } from "@fortawesome/free-solid-svg-icons";
+import { faUniversity, faPlus, faBook } from "@fortawesome/free-solid-svg-icons";
 import Navbar from "../../navbar"
 class ConferencesTalksIndex extends Component {
   constructor(props) {
@@ -23,13 +23,33 @@ class ConferencesTalksIndex extends Component {
     if (!talk) {
       return (<div></div>)
     }
-    let { conference_id} = this.props.match.params
-    let { moderators, speakers, id, day, start_time, end_time, location, description } = talk
+    let { conference_id } = this.props.match.params
+    let { moderators, speakers, id, day, start_time, end_time, location, description, title } = talk
     return (
       <Fragment>
-        <Navbar conference_id={conference_id}/>
+        <Navbar conference_id={conference_id} />
         <div>
           <div className="bg-violet1 p-4">
+
+            <div className="bg-white my-1 rounded p-3 d-flex align-items-center">
+              <div className="px-3 d-flex flex-column justify-content-center">
+                <h3>
+                  <FontAwesomeIcon icon={faBook} />
+                </h3>
+              </div>
+              <div className="d-flex flex-column w-100">
+                <div>
+                  <small className="text-muted font-weight-bolder">
+                    Title
+                </small>
+                </div>
+                <div className="d-flex w-100 justify-content-between text-violet1 font-weight-bolder">
+                  {title}
+                </div>
+              </div>
+            </div>
+
+
             <div className="bg-white my-1  rounded p-3 d-flex align-items-center">
               <div className="px-3 d-flex flex-column justify-content-center">
                 <h3>
@@ -146,7 +166,7 @@ class ConferencesTalksIndex extends Component {
             </div>
           </div>
         </div>
-        </Fragment>)
+      </Fragment>)
   }
 }
 

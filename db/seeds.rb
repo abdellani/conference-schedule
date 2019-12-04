@@ -6,12 +6,20 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 Administrator.create({ name: "admin", email: "admin@admin.com", password: "abcdef" })
-users = [{ name: "speaker", email: "test@test.com",role:"Senior Developer", password: "abcdef" },
-         { name: "speaker1", email: "test@test.com",role:"Senior Developer", password: "abcdef" },
-         { name: "moderator", email: "test@test.com",role:"Teacher", password: "abcdef" },
-         { name: "participant", email: "test@test.com",role:"Student", password: "abcdef" }]
-talks = [{ day: 1, start_time: "00:00", end_time: "01:00", location: "A", description: "blabla" },
-         { day: 2, start_time: "02:00", end_time: "03:00", location: "C", description: "blabla" }]
+users = [{ name: "speaker", email: "speaker@test.com",role:"Senior Developer", password: "abcdef",company:"Company",bio:"A bio",mobile:"+000000000" },
+         { name: "speaker1", email: "speaker1@test.com",role:"Senior Developer", password: "abcdef",company:"Company",bio:"A bio",mobile:"+000000000" },
+         { name: "moderator", email: "moderator@test.com",role:"Teacher", password: "abcdef",company:"Company",bio:"A bio",mobile:"+000000000" },
+         { name: "participant", email: "participant@test.com",role:"Student", password: "abcdef",company:"Company",bio:"A bio",mobile:"+000000000" }]
+talks = [
+    { day: 1, start_time: "00:00", end_time: "01:00", location: "A",
+      title:"Opening",
+      description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Integer enim neque volutpat ac tincidunt vitae semper quis lectus. Vestibulum lectus mauris ultrices eros in cursus turpis massa. " 
+    },
+    { day: 2, start_time: "02:00", end_time: "03:00", location: "C", 
+      title:"workshop",
+      description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Integer enim neque volutpat ac tincidunt vitae semper quis lectus. Vestibulum lectus mauris ultrices eros in cursus turpis massa. " 
+    }
+  ]
 conferences = [
   { date: "01/01/2020", subject: "DevOps", description: "Introduction to docker", location: "University of Computer Science" },
   { date: "01/01/2020", subject: "Security", description: "Introduction to Cryptography", location: "University of Computer Science" },

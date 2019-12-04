@@ -51,7 +51,7 @@ class ConferencesTalksIndex extends Component {
                 id={`day${day}`}
               >
                 {
-                  talks.map(
+                  talks.filter(t=> t.day===day).map(
                     t =>
                       <div className=" my-1 px-1 py-1 w-100" key={t.id}>
                         <div className="pt-1 pb-2">
@@ -67,7 +67,7 @@ class ConferencesTalksIndex extends Component {
                             onClick={() => this.props.history.push(`${this.props.match.url}/${t.id}`)}
                           >
                             <div className="font-weight-bolder text-violet1 w-100 ">
-                              {t.description}
+                              {t.title}
                             </div>
                             <div className="d-flex  w-100 flex-wrap text-nowrap">
                               <div className="d-flex flex-column px-0 w-min-50">

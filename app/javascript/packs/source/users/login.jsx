@@ -32,21 +32,14 @@ class UsersLogin extends React.Component {
     }).
       then(response => response.data).
       then(response => {
-        console.log(response)
         if (response.code == 400) {
           this.setState({
             errors: response.errors,
           })
         }
-        // else if (response.code == 200) {
-        //   this.setState({
-        //     email: "",
-        //     password: "",
-        //     errors: {},
-        //     success: true
-        //   })
-
-        // }
+        else if (response.code == 200) {
+          this.props.history.push("/conferences")
+        }
       })
 
   }
@@ -54,21 +47,18 @@ class UsersLogin extends React.Component {
     let { errors } = this.state
     if (Object.keys(errors).size === 0)
       return (null)
-    console.log(errors)
     return (
       <div className="bg-danger text-white px-3">{
         Object.keys(errors).map(key =>
           <div key={key} >
             {key}
             <ul>
-              {
-                errors[key].map(
-                  m =>
-                    <li>
-                      {m}
-                    </li>
-                )
-              }
+              {errors[key].map(
+                m =>
+                  <li key={m}>
+                    {m}
+                  </li>
+              )}
             </ul>
           </div>
         )}

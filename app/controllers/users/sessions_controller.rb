@@ -5,6 +5,9 @@ class Users::SessionsController < ApplicationController
     if @user and @user.authenticate(params[:user][:password])
       render json:{
           code: 200,
+          user:{
+            name:@user.name
+          }
         }
       
     else

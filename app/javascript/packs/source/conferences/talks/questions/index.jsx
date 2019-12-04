@@ -24,7 +24,7 @@ class ConferencesTalksQuestionsIndex extends Component {
       return (<div></div>)
     }
     let { conference_id } = this.props.match.params
-    let { speakers, questions, start_time, end_time, description, location } = talk
+    let { speakers, questions, start_time, end_time, title, } = talk
     return (
       <Fragment>
         <Navbar conference_id={conference_id} />
@@ -36,7 +36,7 @@ class ConferencesTalksQuestionsIndex extends Component {
             <div className="bg-white my-1 rounded p-3 d-flex align-items-center">
               <div className="d-flex flex-column w-100">
                 <div className="font-weight-bolder text-green1">
-                  {description}
+                  {title}
                 </div>
                 <div className="d-flex w-100 justify-content-between text-violet1 font-weight-bolder">
                   <div>
