@@ -15,7 +15,8 @@ class ConferencesAttendancesIndex extends Component {
     let { id } = this.props.match.params
     fetcher.get(
       `/api/conferences/${id}/attendances`,
-      (data) => this.setState({ attendances: data })
+      (data) => this.setState({ attendances: data }
+      )
     )
   }
   render() {

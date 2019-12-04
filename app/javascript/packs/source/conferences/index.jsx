@@ -1,9 +1,9 @@
 import React, { Component, Fragment } from "react"
-import axios from "axios"
 import { Link } from "react-router-dom"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faInfoCircle, faUniversity, faBookOpen, faGraduationCap } from "@fortawesome/free-solid-svg-icons";
 import Navbar from "../navbar"
+import fetcher from "../utils/fetcher"
 
 class ConferencesIndex extends Component {
   constructor(props) {
@@ -13,8 +13,10 @@ class ConferencesIndex extends Component {
     }
   }
   componentDidMount() {
-    axios.get("/api/conferences").
-      then(response => this.setState({ conferences: response.data }))
+    fetcher.get(
+      "/api/conferences",
+      (data) => this.setState({ conferences: data })
+    )
   }
   render() {
     let { conferences } = this.state

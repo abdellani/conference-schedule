@@ -5,6 +5,7 @@ import { faGraduationCap } from "@fortawesome/free-solid-svg-icons";
 import { formatTime } from "../../../utils"
 import { faClock, faUser } from "@fortawesome/free-regular-svg-icons";
 import Navbar from "../../../navbar"
+import fetcher from "../../../utils/fetcher"
 
 class ConferencesTalksQuestionsIndex extends Component {
   constructor(props) {
@@ -15,8 +16,12 @@ class ConferencesTalksQuestionsIndex extends Component {
   }
   componentDidMount() {
     let { conference_id, id } = this.props.match.params
-    axios.get(`/api/conferences/${conference_id}/talks/${id}/questions`).
-      then(response => this.setState({ talk: response.data }))
+    fetcher.get(
+      `/api/conferences/${conference_id}/talks/${id}/questions`,
+      (data) => this.setState({ talk: data }
+      )
+    )
+
   }
   render() {
     let { talk } = this.state

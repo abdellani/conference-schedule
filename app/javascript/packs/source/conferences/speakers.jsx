@@ -1,8 +1,9 @@
 import React, { Component, Fragment } from "react"
-import axios from "axios"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faUser } from '@fortawesome/free-regular-svg-icons';
 import Navbar from "../navbar"
+import fetcher from "../utils/fetcher"
+
 class ConferencesSpeakersIndex extends Component {
   constructor(props) {
     super(props)
@@ -12,8 +13,10 @@ class ConferencesSpeakersIndex extends Component {
   }
   componentDidMount() {
     let { id } = this.props.match.params
-    axios.get(`/api/conferences/${id}/speakers`).
-      then(response => this.setState({ speakers: response.data }))
+    fetcher.get(
+      `/api/conferences/${id}/speakers`,
+      (data) => this.setState({ speakers: data })
+    )
   }
   render() {
     let { speakers } = this.state

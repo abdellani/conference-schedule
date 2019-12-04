@@ -1,8 +1,8 @@
 import React, { Component } from "react"
-import axios from "axios"
 import Navbar from "../navbar"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {  faBuilding, faChevronDown } from "@fortawesome/free-solid-svg-icons";
+import fetcher from "../utils/fetcher"
 
 class ConferencesSponsors extends Component {
   constructor(props) {
@@ -13,8 +13,10 @@ class ConferencesSponsors extends Component {
   }
   componentDidMount() {
     let { id } = this.props.match.params
-    axios.get(`/api/conferences/${id}/sponsors`).
-      then(response => this.setState({ sponsors: response.data }))
+    fetcher.get(
+      `/api/conferences/${id}/sponsors`,
+      (data) => this.setState({ sponsors: data })
+    )
   }
   render() {
     let { id } = this.props.match.params

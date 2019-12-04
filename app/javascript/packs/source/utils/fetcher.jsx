@@ -1,6 +1,8 @@
 import axios from "axios"
 import {store} from "../index"
 import {LOGOUT} from "../utils/actions"
+//this method will update the state of the store
+// if the user is not logged in 
 const fetcher = () => {
   const get=(path,stateUpdate) => {
     return axios.get(path).
