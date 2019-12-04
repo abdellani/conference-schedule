@@ -4,7 +4,6 @@ import { Route } from "react-router-dom"
 class PrivateRoute extends Component {
 
   render() {
-    console.log(this.props)
     let { path,component } = this.props
     return (
       <Route

@@ -19,52 +19,60 @@ import ConferencesTalksQuestionsIndex from "./conferences/talks/questions/index"
 import UsersSignup from "./users/signup"
 import UsersLogin from "./users/login"
 import Privateroute from "./utils/privateroute"
-
+import { createStore } from "redux"
+import reducer from "./utils/reducer"
+import { Provider } from "react-redux"
 import "./scss/index.scss"
+
+let store = createStore(reducer)
+
 const App = () =>
-  <Router>
-    <Switch>
-      <Privateroute
-        path="/conferences/:conference_id/talks/:id/questions"
-        component={ConferencesTalksQuestionsIndex}
-      />
-      <Privateroute
-        path="/conferences/:conference_id/talks/:id"
-        component={ConferencesTalksShow}
-      />
-      <Privateroute
-        path="/conferences/:id/talks"
-        component={ConferencesTalksIndex}
-      />
-      <Privateroute
-        path="/conferences/:id/attendances"
-        component={ConferencesAttendancesIndex}
-      />
-      <Privateroute
-        path="/conferences/:id/speakers"
-        component={ConferencesSpeakersIndex}
-      />
-      <Privateroute
-        path="/conferences/:id/sponsors"
-        component={ConferencesSponsors}
-      />
-      <Privateroute
-        path="/conferences/:id/exhibitors"
-        component={ConferencesExhibitors}
-      />
-      <Privateroute
-        path="/conferences"
-        component={ConferencesIndex}
-      />
-      <Route
-        path="/signup"
-        component={UsersSignup}
-      />
-      <Route
-        path="/login"
-        component={UsersLogin}
-      />
-    </Switch>
-  </Router>
+  <Provider store={store}>
+    <Router>
+      <Switch>
+        <Privateroute
+          path="/conferences/:conference_id/talks/:id/questions"
+          component={ConferencesTalksQuestionsIndex}
+        />
+        <Privateroute
+          path="/conferences/:conference_id/talks/:id"
+          component={ConferencesTalksShow}
+        />
+        <Privateroute
+          path="/conferences/:id/talks"
+          component={ConferencesTalksIndex}
+        />
+        <Privateroute
+          path="/conferences/:id/attendances"
+          component={ConferencesAttendancesIndex}
+        />
+        <Privateroute
+          path="/conferences/:id/speakers"
+          component={ConferencesSpeakersIndex}
+        />
+        <Privateroute
+          path="/conferences/:id/sponsors"
+          component={ConferencesSponsors}
+        />
+        <Privateroute
+          path="/conferences/:id/exhibitors"
+          component={ConferencesExhibitors}
+        />
+        <Privateroute
+          path="/conferences"
+          component={ConferencesIndex}
+        />
+        <Route
+          path="/signup"
+          component={UsersSignup}
+        />
+        <Route
+          path="/login"
+          component={UsersLogin}
+        />
+      </Switch>
+    </Router>
+  </Provider>
+
 export default App;
 
