@@ -18,6 +18,7 @@ import ConferencesTalksShow from "./conferences/talks/show"
 import ConferencesTalksQuestionsIndex from "./conferences/talks/questions/index"
 import UsersSignup from "./users/signup"
 import UsersLogin from "./users/login"
+import UsersProfile from "./users/profile"
 import PrivateRoute from "./utils/privateroute"
 import GuestRoute from "./utils/guestroute"
 import reducer from "./utils/reducer"
@@ -68,6 +69,10 @@ const App = () =>
         <PrivateRoute
           path="/conferences"
           component={ConferencesIndex}
+        />
+        <PrivateRoute
+          path="/profile"
+          component={UsersProfile}
         />
         <GuestRoute
           path="/signup"

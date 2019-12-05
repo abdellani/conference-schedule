@@ -11,11 +11,12 @@ class Navbar extends React.Component {
     super(props)
   }
   render() {
-    let { conference_id = -1, conference_selected = true, login } = this.props
+    let { conference_id = -1, conference_selected = true, login, name } = this.props
     return (
       <div>
-        <div className="bg-violet1 d-flex flex-row-reverse py-2 px-2 ">
-          <button className="bg-transparent border-0 text-white"
+        <div className="bg-violet1 d-flex flex-row-reverse  justify-space-between align-items-center \
+         w-100 py-2 px-2 ">
+          <button className="bg-transparent border-0 text-white d-block"
             type="button"
             data-toggle="collapse"
             data-target="#navbar"
@@ -24,6 +25,11 @@ class Navbar extends React.Component {
               <FontAwesomeIcon icon={faBars} />
             </h3>
           </button>
+          {
+            name && <div className="text-white font-weight-bolder w-100">
+              Hi, <span className="text-blue1">{name}</span>
+            </div>
+          }
         </div>
         <div className="collapse" id="navbar">
           <div className="shadow-sm bg-white py-2 px-2 d-flex flex-wrap ">
@@ -38,7 +44,7 @@ class Navbar extends React.Component {
   }
   userMenu() {
     return <Fragment>
-      {this.item(faIdBadge, "Profile")}
+      {this.item(faIdBadge, "Profile","/profile")}
       {
         this.item(
           faSignOutAlt, "Logout", "#",
@@ -83,9 +89,9 @@ class Navbar extends React.Component {
 }
 
 const mapStateToProps = (state) => {
-  let { login } = state
+  let { login, name } = state
   return {
-    login
+    login, name
   }
 }
 const mapDispatchToProps = (dispatch) => {

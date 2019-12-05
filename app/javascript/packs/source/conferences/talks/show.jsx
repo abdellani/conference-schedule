@@ -30,7 +30,7 @@ class ConferencesTalksIndex extends Component {
         if (response.code === 200) 
         { alert("The talks has been added.") }
         if (response.code === 400) 
-        { alert("Something is broken!") }
+        { alert("It's already in your list!") }
        }
       )
 
@@ -102,7 +102,11 @@ class ConferencesTalksIndex extends Component {
                 </div>
               </div>
             </div>
-            <div className="bg-blue1 w-100 text-white mt-3 px-3 rounded p-2 d-flex align-items-center justify-content-between">
+            <div 
+            className="bg-blue1 w-100 text-white mt-3 px-3 rounded\
+             p-2 d-flex align-items-center justify-content-between"
+            onClick={() => this.addToSchedule()}
+            >
               <div>
                 Add to your schedule
             </div>
@@ -174,7 +178,6 @@ class ConferencesTalksIndex extends Component {
             </Link>
             <div
               className="rounded bg-blue1 px-3 py-2 my-2 d-flex justify-content-between text-white"
-              onClick={() => this.addToSchedule()}
             >
               <div>
                 Add your review
