@@ -24,7 +24,6 @@ class Profile extends React.Component {
   }
   render() {
     let { attendances } = this.state
-    console.log(attendances)
     return (
       <Fragment>
         <Navbar conference_selected={false} />

@@ -34,7 +34,6 @@ class UsersLogin extends React.Component {
     }).
       then(response => response.data).
       then(response => {
-        console.log(response.data)
         if (response.code == 400) {
           this.setState({
             errors: response.errors,
