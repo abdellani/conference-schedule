@@ -6,6 +6,7 @@ class User < ApplicationRecord
   validates :email, presence: true, uniqueness: true, length: { minimum: 3, maximum: 100 },
                     format: { with: VALID_EMAIL_REGEX }
   validates :mobile, presence: true, length: { minimum: 8, maximum: 60 }
+  
   has_secure_password
   validates :bio, presence: true, length: { minimum: 3, maximum: 500 }
   has_many :attendances
