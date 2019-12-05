@@ -82,6 +82,10 @@ const App = () =>
           path="/login"
           component={UsersLogin}
         />
+        <GuestRoute
+          path="/"
+          component={UsersLogin}
+        />
       </Switch>
     </Router>
   </Provider>
