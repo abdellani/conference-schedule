@@ -4,7 +4,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faUser, faQuestionCircle, faCommentDots, faClock } from '@fortawesome/free-regular-svg-icons';
 import { Link } from "react-router-dom"
 import { formatTime } from "../../utils"
-import { faUniversity, faPlus, faBook } from "@fortawesome/free-solid-svg-icons";
+import { faUniversity, faPlus, faBook, faBookOpen } from "@fortawesome/free-solid-svg-icons";
 import Navbar from "../../navbar"
 import axios from "axios"
 class ConferencesTalksIndex extends Component {
@@ -51,7 +51,7 @@ class ConferencesTalksIndex extends Component {
             <div className="bg-white my-1 rounded p-3 d-flex align-items-center">
               <div className="px-3 d-flex flex-column justify-content-center">
                 <h3>
-                  <FontAwesomeIcon icon={faBook} />
+                  <FontAwesomeIcon icon={faBookOpen} />
                 </h3>
               </div>
               <div className="d-flex flex-column w-100">

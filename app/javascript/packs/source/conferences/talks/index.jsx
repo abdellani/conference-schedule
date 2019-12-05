@@ -1,6 +1,6 @@
 import React, { Component, Fragment } from "react"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faChevronDown, faPodcast, faLandmark, faPlusCircle } from '@fortawesome/free-solid-svg-icons';
+import { faChevronDown, faPodcast, faLandmark, faPlusCircle, faUser } from '@fortawesome/free-solid-svg-icons';
 import { formatTime } from "../../utils"
 import Navbar from "../../navbar"
 import fetcher from "../../utils/fetcher"
@@ -77,13 +77,13 @@ class ConferencesTalksIndex extends Component {
                             </small>
                           </div>
                           <div
-                            className="d-flex flex-wrap w-100 shadow-sm"
+                            className="d-flex flex-nowrap w-100 shadow-sm"
                           >
                             <Link
                               to={`${this.props.match.url}/${t.id}`}
                               className="d-flex w-min-80 px-2 talk-title py-2 \
                             flex-column flex-nowrap align-items-center \
-                            bg-white text-dark "
+                            bg-white text-dark text-wrap"
                             >
                               <div className="font-weight-bolder text-violet1 w-100 ">
                                 {t.title}
@@ -93,12 +93,12 @@ class ConferencesTalksIndex extends Component {
                                   {
                                     t.speakers.map(speaker =>
                                       <div key={speaker.id} >
-                                        <FontAwesomeIcon icon={faPodcast} /> {speaker.name}
+                                        <FontAwesomeIcon icon={faUser} /> {speaker.name}
                                       </div>
                                     )
                                   }
                                 </div>
-                                <div className="">
+                                <div className="px-2">
                                   <span className="mr-2"><FontAwesomeIcon icon={faLandmark} /></span> {t.location}
                                 </div>
                               </div>
