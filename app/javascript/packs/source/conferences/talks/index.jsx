@@ -4,7 +4,7 @@ import { faChevronDown, faPodcast, faLandmark, faPlusCircle } from '@fortawesome
 import {formatTime} from "../../utils"
 import Navbar from "../../navbar"
 import fetcher from "../../utils/fetcher"
-
+import {Link} from "react-router-dom"
 class ConferencesTalksIndex extends Component {
   constructor(props) {
     super(props)
@@ -67,9 +67,11 @@ class ConferencesTalksIndex extends Component {
                         <div
                           className="d-flex flex-wrap w-100 shadow-sm"
                         >
-                          <div
-                            className="d-flex w-min-80 px-2 talk-title py-2 flex-column flex-nowrap align-items-center bg-white "
-                            onClick={() => this.props.history.push(`${this.props.match.url}/${t.id}`)}
+                          <Link 
+                          to={`${this.props.match.url}/${t.id}`}
+                            className="d-flex w-min-80 px-2 talk-title py-2 \
+                            flex-column flex-nowrap align-items-center \
+                            bg-white text-dark "
                           >
                             <div className="font-weight-bolder text-violet1 w-100 ">
                               {t.title}
@@ -88,7 +90,7 @@ class ConferencesTalksIndex extends Component {
                                 <span className="mr-2"><FontAwesomeIcon icon={faLandmark} /></span> {t.location}
                               </div>
                             </div>
-                          </div>
+                            </Link>
                           <div className="w-min-20 bg-green1 add-to-schedule-button text-nowrap d-flex align-items-center justify-content-center ">
                             <h3 >
                               <FontAwesomeIcon icon={faPlusCircle} />

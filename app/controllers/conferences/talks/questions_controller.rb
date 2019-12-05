@@ -1,4 +1,5 @@
 class Conferences::Talks::QuestionsController < ApplicationController
+  skip_before_action :verify_authenticity_token, only: [:create]
   before_action :is_logged_in?
 
   def index
@@ -19,4 +20,18 @@ class Conferences::Talks::QuestionsController < ApplicationController
              ),
            }
   end
+  def create
+    talk=Talk.find(params[:talk_id])
+
+    question=current_user.questions.new(content: params[:question],talk:talk) 
+    if question && question.save 
+      render json: {code: 200}
+    else
+      render json: {
+        code: 400,
+        errors: question.errors.messages
+      }
+    end
+  end
+    
 end

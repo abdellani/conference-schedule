@@ -4,6 +4,7 @@ Rails.application.routes.draw do
     resources :users,only: [:create] 
     scope :users do
       resources :sessions,only: [:create],module: :users
+      delete "/sessions", to: "users/sessions#destroy", module: :users
     end
     resources :conferences, only: [:show, :index] do
       resources :sponsors,only:[:index],module: :conferences
@@ -12,7 +13,7 @@ Rails.application.routes.draw do
       resources :speakers, only: [:index], module: :conferences
       resources :talks, only: [:show, :index], module: :conferences do
         resources :attendances, only: [:index], module: :talks
-        resources :questions, only: [:index], module: :talks
+        resources :questions, only: [:index,:create], module: :talks
       end
     end
   end
