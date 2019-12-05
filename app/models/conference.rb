@@ -1,4 +1,9 @@
 class Conference < ApplicationRecord
+
+  validates :location, presence: true, length: { minimum: 3, maximum: 100 }
+  validates :subject, presence: true, length: { minimum: 3, maximum: 100 }
+  validates :description, presence: true, length: { minimum: 3, maximum: 100 }
+
   has_many :talks
   has_many :attendees,->{distinct}, through: :talks
   has_many :speakers,->{distinct}, through: :talks
