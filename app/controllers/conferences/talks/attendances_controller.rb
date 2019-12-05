@@ -16,7 +16,7 @@ class Conferences::Talks::AttendancesController < ApplicationController
     puts current_user
     attandances = Talk.find_by_conference_id_and_id(
       params[:conference_id], params[:talk_id]
-    ).attendances.build(user:current_user,role:"participante")
+    ).attendances.build(user:current_user,role:"participant")
     if attandances && attandances.save
       render json: { code: 200 }
     else

@@ -101,7 +101,7 @@ users_data = [
     },
                    {
       name: "Ruby Newbie",
-      email: "participant@rails.xyz",
+      email: "participant1@rails.xyz",
       role: "Student",
       password: "abcdef",
       company: "Company",
