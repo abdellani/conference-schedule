@@ -6,7 +6,7 @@ import { Link } from "react-router-dom"
 import { formatTime } from "../../utils"
 import { faUniversity, faPlus, faBook } from "@fortawesome/free-solid-svg-icons";
 import Navbar from "../../navbar"
-
+import axios from "axios"
 class ConferencesTalksIndex extends Component {
   constructor(props) {
     super(props)
@@ -21,6 +21,19 @@ class ConferencesTalksIndex extends Component {
       (data) => this.setState({ talk: data }
       )
     )
+  }
+  addToSchedule() {
+    let { conference_id, id } = this.props.match.params
+    axios.post(`/api/conferences/${conference_id}/talks/${id}/attendances`).
+      then(response => response.data).
+      then(response => { 
+        if (response.code === 200) 
+        { alert("The talks has been added.") }
+        if (response.code === 400) 
+        { alert("Something is broken!") }
+       }
+      )
+
   }
   render() {
     let { talk } = this.state
@@ -52,7 +65,6 @@ class ConferencesTalksIndex extends Component {
                 </div>
               </div>
             </div>
-
 
             <div className="bg-white my-1  rounded p-3 d-flex align-items-center">
               <div className="px-3 d-flex flex-column justify-content-center">
@@ -160,7 +172,10 @@ class ConferencesTalksIndex extends Component {
                 </div>
               </div>
             </Link>
-            <div className="rounded bg-blue1 px-3 py-2 my-2 d-flex justify-content-between text-white">
+            <div
+              className="rounded bg-blue1 px-3 py-2 my-2 d-flex justify-content-between text-white"
+              onClick={() => this.addToSchedule()}
+            >
               <div>
                 Add your review
             </div>

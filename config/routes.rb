@@ -12,7 +12,7 @@ Rails.application.routes.draw do
       resources :attendances, only: [:index], module: :conferences
       resources :speakers, only: [:index], module: :conferences
       resources :talks, only: [:show, :index], module: :conferences do
-        resources :attendances, only: [:index], module: :talks
+        resources :attendances, only: [:index,:create], module: :talks
         resources :questions, only: [:index,:create], module: :talks
       end
     end
