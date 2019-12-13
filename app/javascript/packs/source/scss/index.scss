@@ -1,0 +1,73 @@
+$bg-color:#f8f8ff;
+
+$blue:#35bee0;
+$violet:#59499e;
+$green:#5cba47;
+$pink: #ff6ea1;
+.navbar-item{
+  width: 100px;
+}
+.mb-50{
+  margin-bottom: 60px;
+}
+i{
+  color: black;
+}
+.w-min-20{
+  min-width: 20%;
+}
+.w-min-50{
+  min-width: 50%;
+}
+.w-min-80{
+  min-width: 80%;
+}
+.text-blue1{
+  color:$blue;
+}
+.bg-blue1{
+  background-color:$blue;
+}
+.text-pink1{
+  color:$pink;
+}
+.bg-pink1{
+  background-color:$pink;
+}
+
+.text-violet1{
+  color:$violet;
+}
+.bg-violet1{
+  background-color:$violet;
+}
+.text-green1{
+  color:$green;
+}
+.bg-green1{
+  background-color:$green;
+}
+.add-to-schedule-button{
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+.talk-title{
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+}
+.user-creation-success-notification{
+  height: 100vh;
+  width: 100vw;
+  position: fixed;
+  z-index: 12;
+}
+a:hover{
+  text-decoration: none !important;
+}
+body{
+  background-color:$bg-color;
+  *:focus { outline: none; }
+  .show-day-schedule-button.collapsed{
+    transform:rotate(-90deg);
+  }
+}

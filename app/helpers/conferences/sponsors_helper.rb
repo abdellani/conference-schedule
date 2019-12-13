@@ -1,0 +1,2 @@
+module Conferences::SponsorsHelper
+end

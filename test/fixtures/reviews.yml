@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  speaker: one
+  participant: one
+  talk: one
+  evaluation: 1
+  note: MyString
+
+two:
+  speaker: two
+  participant: two
+  talk: two
+  evaluation: 1
+  note: MyString
