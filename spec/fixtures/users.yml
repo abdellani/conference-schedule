@@ -1,0 +1,9 @@
+one:
+  id: "1"
+  name: "participant"
+  company: "company"
+  role: "worker"
+  email: "participant@test.com"
+  mobile: "+000000000000"
+  password_digest: "super secret password !!!"
+  bio: "My bio !"

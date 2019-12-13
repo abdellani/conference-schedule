@@ -1,0 +1,13 @@
+one:
+  id: 1
+  date: "2020-01-01"
+  location: "University X"
+  subject: "DevOps"
+  description: "Introduction to docker"
+
+two:
+  id: 2
+  date: "2020-01-09"
+  location: "University Z"
+  subject: "Web development"
+  description: "Introduction into Rails"
