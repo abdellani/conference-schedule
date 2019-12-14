@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class Review < ApplicationRecord
   validates :note, presence: true, length: { minimum: 3, maximum: 300 }
 

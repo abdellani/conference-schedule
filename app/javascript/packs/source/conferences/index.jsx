@@ -3,7 +3,7 @@ import { Link } from "react-router-dom"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faInfoCircle, faUniversity, faBookOpen, faGraduationCap, faBook, faScroll } from "@fortawesome/free-solid-svg-icons";
 import Navbar from "../navbar"
-import fetcher from "../utils/fetcher"
+import fetcher from "../utils/helpers/fetcher"
 import { faFile } from "@fortawesome/free-regular-svg-icons";
 
 class ConferencesIndex extends Component {
@@ -28,9 +28,9 @@ class ConferencesIndex extends Component {
       <Fragment>
         <Navbar conference_selected={false} />
         <div className="bg-violet1 p-4">
-          <div className="text-white font-weight-bolder mb-2">
+          <h1 className="text-white h4 font-weight-bolder mb-2">
             Conferences
-          </div>
+          </h1>
         </div>
         <div className="px-4 my-4">
           {

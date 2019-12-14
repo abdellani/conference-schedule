@@ -1,10 +1,8 @@
 import React, { Fragment } from "react"
 import axios from "axios"
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faSignInAlt, faWindowClose } from "@fortawesome/free-solid-svg-icons";
 import Navbar from "../navbar";
 import {connect} from "react-redux";
-import {LOGIN} from "../utils/actions"
+import {LOGIN} from "../utils/redux/actions"
 class UsersLogin extends React.Component {
   constructor(props) {
     super(props);
@@ -79,9 +77,9 @@ class UsersLogin extends React.Component {
 
         <div>
           <div className="bg-violet1 p-4">
-            <div className="text-white font-weight-bolder mb-2">
+            <h1 className="text-white h4 font-weight-bolder mb-2">
               Login
-          </div>
+          </h1>
           </div>
           <form className="px-3 my-2 text-violet1 font-weight-bolder">
             {this.showErrors()}

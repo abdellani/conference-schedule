@@ -1,10 +1,10 @@
 import React, { Fragment } from "react"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faBars, faStore, faHandHoldingUsd, faUsers, faVolumeUp, faChalkboardTeacher, faCalendar, faHome, faSignOutAlt, faIdBadge, faSignInAlt } from "@fortawesome/free-solid-svg-icons";
+import { faBars, faStore, faHandHoldingUsd, faUsers, faChalkboardTeacher, faCalendar, faHome, faSignOutAlt, faIdBadge, faSignInAlt } from "@fortawesome/free-solid-svg-icons";
 import { Link } from "react-router-dom";
 import { faPlusSquare } from "@fortawesome/free-regular-svg-icons";
 import { connect } from "react-redux"
-import { LOGOUT } from "./utils/actions";
+import { LOGOUT } from "./utils/redux/actions";
 import axios from "axios";
 class Navbar extends React.Component {
   constructor(props) {
