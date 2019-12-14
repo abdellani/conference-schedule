@@ -7,3 +7,12 @@ one:
   address: "address"
   pobox: "00000"
   telephone: "+000000000000"
+two:
+  id: 2
+  name: "exhibitor"
+  description: "exhibitor"
+  website: "www.company1.com"
+  email: "company1@email.com"
+  address: "address"
+  pobox: "00000"
+  telephone: "+111111111111"
