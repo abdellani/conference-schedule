@@ -104,7 +104,12 @@ class ConferencesTalksIndex extends Component {
                               </div>
                             </Link>
                             <div
-                              onClick={() => this.addToSchedule(t.id)}
+                              onClick={(e) => {
+                                this.addToSchedule(t.id);
+                                let target=e.target
+                                let newNode =target.cloneNode(true);
+                                target.parentNode.replaceChild(newNode,target)
+                              }}
                               className="w-min-20 bg-green1 add-to-schedule-button text-nowrap d-flex align-items-center justify-content-center ">
                               <h3 >
                                 <FontAwesomeIcon icon={faPlusCircle} />
