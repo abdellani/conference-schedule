@@ -1,0 +1,9 @@
+one:
+  id: 1
+  name: "sponsor"
+  description: "sponsor"
+  website: "www.company.com"
+  email: "company@email.com"
+  address: "address"
+  pobox: "00000"
+  telephone: "+000000000000"
