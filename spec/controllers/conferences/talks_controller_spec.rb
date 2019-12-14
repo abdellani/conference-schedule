@@ -8,7 +8,7 @@ RSpec.describe Conferences::TalksController, type: :controller do
       answer = { code: 401 }.to_json
       expect(page.body).to eq answer
     end
-    scenario "Should get code=200 with list of talks with details if the user is authenticated" do
+    scenario "Should get code=200 with list of talks if the user is authenticated" do
       page.set_rack_session(id: 1)
       visit "/api/conferences/1/talks"
       answer = { code: 200, data: [
@@ -49,7 +49,7 @@ RSpec.describe Conferences::TalksController, type: :controller do
       answer = { code: 401 }.to_json
       expect(page.body).to eq answer
     end
-    scenario "Should get code=200 with list of talks with details if the user is authenticated" do
+    scenario "Should get code=200 with talk's details if the user is authenticated" do
       page.set_rack_session(id: 1)
       visit "/api/conferences/1/talks/1"
       answer = { code: 200, data: {
