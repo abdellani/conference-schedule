@@ -20,7 +20,13 @@ RSpec.describe Conferences::TalksController, type: :controller do
           location: "A",
           description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit",
           title: "Opening",
-          speakers:[]
+          speakers: [
+            {
+              id: 2,
+              name: "speaker",
+              role: "senior developer",
+            },
+          ],
         },
         {
           id: 2,
@@ -30,7 +36,7 @@ RSpec.describe Conferences::TalksController, type: :controller do
           location: "C",
           description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit",
           title: "Introduction to Docker",
-          speakers:[]
+          speakers: [],
         },
 
       ] }.to_json
@@ -46,25 +52,34 @@ RSpec.describe Conferences::TalksController, type: :controller do
     scenario "Should get code=200 with list of talks with details if the user is authenticated" do
       page.set_rack_session(id: 1)
       visit "/api/conferences/1/talks/1"
-      answer = { code: 200, data: 
-        {
-          id: 1,
-          day: 1,
-          start_time: "2000-01-01T09:00:00.000Z",
-          end_time: "2000-01-01T10:00:00.000Z",
-          location: "A",
-          description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit",
-          title: "Opening",
-          conference:{
-            subject: "DevOps",
-            description: "Introduction to docker"
-          },
-          speakers:[],
-          moderators:[],
+      answer = { code: 200, data: {
+        id: 1,
+        day: 1,
+        start_time: "2000-01-01T09:00:00.000Z",
+        end_time: "2000-01-01T10:00:00.000Z",
+        location: "A",
+        description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit",
+        title: "Opening",
+        conference: {
+          subject: "DevOps",
+          description: "Introduction to docker",
         },
-       }.to_json
+        speakers: [
+          {
+            id: 2,
+            name: "speaker",
+            role: "senior developer",
+          },
+        ],
+        moderators: [
+          {
+            id: 3,
+            name: "moderator",
+            role: "Teacher",
+          },
+        ],
+      } }.to_json
       expect(page.body).to eq answer
     end
-
   end
 end
