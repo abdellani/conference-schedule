@@ -3,7 +3,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faChevronDown, faPodcast, faLandmark, faPlusCircle, faUser } from '@fortawesome/free-solid-svg-icons';
 import { formatTime } from "../../utils"
 import Navbar from "../../navbar"
-import fetcher from "../../utils/fetcher"
+import fetcher from "../../utils/helpers/fetcher"
 import { Link } from "react-router-dom"
 import axios from "axios"
 class ConferencesTalksIndex extends Component {

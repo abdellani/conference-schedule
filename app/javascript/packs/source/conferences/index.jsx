@@ -3,7 +3,7 @@ import { Link } from "react-router-dom"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faInfoCircle, faUniversity, faBookOpen, faGraduationCap, faBook, faScroll } from "@fortawesome/free-solid-svg-icons";
 import Navbar from "../navbar"
-import fetcher from "../utils/fetcher"
+import fetcher from "../utils/helpers/fetcher"
 import { faFile } from "@fortawesome/free-regular-svg-icons";
 
 class ConferencesIndex extends Component {

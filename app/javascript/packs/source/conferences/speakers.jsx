@@ -2,7 +2,7 @@ import React, { Component, Fragment } from "react"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faUser } from '@fortawesome/free-regular-svg-icons';
 import Navbar from "../navbar"
-import fetcher from "../utils/fetcher"
+import fetcher from "../utils/helpers/fetcher"
 
 class ConferencesSpeakersIndex extends Component {
   constructor(props) {

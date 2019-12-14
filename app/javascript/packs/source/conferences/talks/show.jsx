@@ -1,5 +1,5 @@
 import React, { Component, Fragment } from "react"
-import fetcher from "../../utils/fetcher"
+import fetcher from "../../utils/helpers/fetcher"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faUser, faQuestionCircle, faCommentDots, faClock } from '@fortawesome/free-regular-svg-icons';
 import { Link } from "react-router-dom"

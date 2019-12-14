@@ -4,7 +4,7 @@ import { faGraduationCap } from "@fortawesome/free-solid-svg-icons";
 import { formatTime } from "../../../utils"
 import { faClock, faUser, faPaperPlane } from "@fortawesome/free-regular-svg-icons";
 import Navbar from "../../../navbar"
-import fetcher from "../../../utils/fetcher"
+import fetcher from "../../../utils/helpers/fetcher"
 import axios from "axios"
 
 class ConferencesTalksQuestionsIndex extends Component {

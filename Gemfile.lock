@@ -199,8 +199,8 @@ DEPENDENCIES
   jbuilder (~> 2.5)
   listen (>= 3.0.5, < 3.2)
   pg (>= 0.18, < 2.0)
-  rack_session_access
   puma (~> 3.12)
+  rack_session_access
   rails (~> 5.1.7)
   rspec-rails
   sass-rails (~> 5.0)

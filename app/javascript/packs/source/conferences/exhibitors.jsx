@@ -2,7 +2,7 @@ import React, { Component } from "react"
 import Navbar from "../navbar"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faGlobe, faBuilding, faChevronDown } from "@fortawesome/free-solid-svg-icons";
-import fetcher from "../utils/fetcher"
+import fetcher from "../utils/helpers/fetcher"
 
 class ConferencesExhibitors extends Component {
   constructor(props) {

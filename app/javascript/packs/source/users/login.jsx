@@ -1,7 +1,5 @@
 import React, { Fragment } from "react"
 import axios from "axios"
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faSignInAlt, faWindowClose } from "@fortawesome/free-solid-svg-icons";
 import Navbar from "../navbar";
 import {connect} from "react-redux";
 import {LOGIN} from "../utils/actions"

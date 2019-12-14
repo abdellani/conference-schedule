@@ -1,6 +1,6 @@
 import React, { Fragment } from "react"
 import Navbar from "../navbar"
-import fetcher from "../utils/fetcher"
+import fetcher from "../utils/helpers/fetcher"
 import { Link } from "react-router-dom"
 import { faLandmark, faPodcast, faBook, faBookOpen } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
