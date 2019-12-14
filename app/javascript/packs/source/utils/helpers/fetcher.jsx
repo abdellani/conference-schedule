@@ -1,6 +1,6 @@
 import axios from "axios"
 import {store} from "../../index"
-import {LOGOUT} from "../actions"
+import {LOGOUT} from "../redux/actions"
 //this method will update the state of the store
 // if the user is not logged in 
 const fetcher = () => {

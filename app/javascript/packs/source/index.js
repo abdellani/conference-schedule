@@ -19,9 +19,9 @@ import ConferencesTalksQuestionsIndex from "./conferences/talks/questions/index"
 import UsersSignup from "./users/signup"
 import UsersLogin from "./users/login"
 import UsersProfile from "./users/profile"
-import PrivateRoute from "./utils/privateroute"
-import GuestRoute from "./utils/guestroute"
-import reducer from "./utils/reducer"
+import PrivateRoute from "./utils/routes/privateroute"
+import GuestRoute from "./utils/routes/guestroute"
+import reducer from "./utils/redux/reducer"
 import { Provider } from "react-redux"
 import { compose, createStore } from 'redux';
 import persistState from 'redux-localstorage'

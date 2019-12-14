@@ -1,7 +1,7 @@
 import React, { Component, Fragment } from "react"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faGraduationCap } from "@fortawesome/free-solid-svg-icons";
-import { formatTime } from "../../../utils"
+import { formatTime } from "../../../utils/helpers"
 import { faClock, faUser, faPaperPlane } from "@fortawesome/free-regular-svg-icons";
 import Navbar from "../../../navbar"
 import fetcher from "../../../utils/helpers/fetcher"

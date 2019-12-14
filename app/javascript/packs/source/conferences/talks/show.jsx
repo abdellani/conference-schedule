@@ -3,7 +3,7 @@ import fetcher from "../../utils/helpers/fetcher"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faUser, faQuestionCircle, faCommentDots, faClock } from '@fortawesome/free-regular-svg-icons';
 import { Link } from "react-router-dom"
-import { formatTime } from "../../utils"
+import { formatTime } from "../../utils/helpers"
 import { faUniversity, faPlus, faBook, faBookOpen } from "@fortawesome/free-solid-svg-icons";
 import Navbar from "../../navbar"
 import axios from "axios"

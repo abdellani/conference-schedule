@@ -2,7 +2,7 @@ import React, { Fragment } from "react"
 import axios from "axios"
 import Navbar from "../navbar";
 import {connect} from "react-redux";
-import {LOGIN} from "../utils/actions"
+import {LOGIN} from "../utils/redux/actions"
 class UsersLogin extends React.Component {
   constructor(props) {
     super(props);

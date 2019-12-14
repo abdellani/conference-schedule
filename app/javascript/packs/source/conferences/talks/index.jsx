@@ -1,7 +1,7 @@
 import React, { Component, Fragment } from "react"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faChevronDown, faPodcast, faLandmark, faPlusCircle, faUser } from '@fortawesome/free-solid-svg-icons';
-import { formatTime } from "../../utils"
+import { formatTime } from "../../utils/helpers"
 import Navbar from "../../navbar"
 import fetcher from "../../utils/helpers/fetcher"
 import { Link } from "react-router-dom"

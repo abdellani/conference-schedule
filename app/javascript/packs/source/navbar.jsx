@@ -4,7 +4,7 @@ import { faBars, faStore, faHandHoldingUsd, faUsers, faChalkboardTeacher, faCale
 import { Link } from "react-router-dom";
 import { faPlusSquare } from "@fortawesome/free-regular-svg-icons";
 import { connect } from "react-redux"
-import { LOGOUT } from "./utils/actions";
+import { LOGOUT } from "./utils/redux/actions";
 import axios from "axios";
 class Navbar extends React.Component {
   constructor(props) {
