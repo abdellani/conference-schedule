@@ -1,0 +1,28 @@
+one:
+  id: "1"
+  name: "participant"
+  company: "company"
+  role: "worker"
+  email: "participant@test.com"
+  mobile: "+000000000000"
+  password_digest: "super secret password !!!"
+  bio: "My bio !"
+two:
+  id: "2"
+  name: "speaker"
+  company: "companyA"
+  role: "senior developer"
+  email: "speaker@test.com"
+  mobile: "+000000000123"
+  password_digest: "super secret password !!!"
+  bio: "My bio !"
+
+three:
+  id: "3"
+  name: "moderator"
+  company: "company"
+  role: "Teacher"
+  email: "moderator@test.com"
+  mobile: "+000000000456"
+  password_digest: "super secret password !!!"
+  bio: "My bio !"

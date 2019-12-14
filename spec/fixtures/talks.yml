@@ -1,0 +1,18 @@
+one:
+    id: 1
+    conference_id: "1"
+    day: 1
+    start_time: "09:00:00"
+    end_time: "10:00:00"
+    location: "A"
+    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit"
+    title: "Opening"
+two:
+    id: 2
+    conference_id: "1"
+    day: 1
+    start_time: "10:00:00"
+    end_time: "12:00:00"
+    location: "C"
+    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit"
+    title: "Introduction to Docker"
