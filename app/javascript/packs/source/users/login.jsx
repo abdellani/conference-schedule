@@ -77,9 +77,9 @@ class UsersLogin extends React.Component {
 
         <div>
           <div className="bg-violet1 p-4">
-            <div className="text-white font-weight-bolder mb-2">
+            <h1 className="text-white h4 font-weight-bolder mb-2">
               Login
-          </div>
+          </h1>
           </div>
           <form className="px-3 my-2 text-violet1 font-weight-bolder">
             {this.showErrors()}

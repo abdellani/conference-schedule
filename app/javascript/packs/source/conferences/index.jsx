@@ -28,9 +28,9 @@ class ConferencesIndex extends Component {
       <Fragment>
         <Navbar conference_selected={false} />
         <div className="bg-violet1 p-4">
-          <div className="text-white font-weight-bolder mb-2">
+          <h1 className="text-white h4 font-weight-bolder mb-2">
             Conferences
-          </div>
+          </h1>
         </div>
         <div className="px-4 my-4">
           {

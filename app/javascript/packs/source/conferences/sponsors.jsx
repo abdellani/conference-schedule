@@ -24,9 +24,9 @@ class ConferencesSponsors extends Component {
     return (
       <div>
         <Navbar conference_id={id} />
-        <div className="bg-violet1 text-white font-weight-bolder px-3 py-2 pb-3">
+        <h1 className="bg-violet1 h4 text-white font-weight-bolder px-3 py-2 pb-3">
           Sponsors
-        </div>
+        </h1>
         <div className="px-3">
           {
             sponsors.map(
