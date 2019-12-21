@@ -2,7 +2,7 @@ import React, { Component } from "react"
 import Navbar from "../navbar"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {  faBuilding, faChevronDown } from "@fortawesome/free-solid-svg-icons";
-import fetcher from "../utils/fetcher"
+import fetcher from "../utils/helpers/fetcher"
 
 class ConferencesSponsors extends Component {
   constructor(props) {
@@ -24,9 +24,9 @@ class ConferencesSponsors extends Component {
     return (
       <div>
         <Navbar conference_id={id} />
-        <div className="bg-violet1 text-white font-weight-bolder px-3 py-2 pb-3">
+        <h1 className="bg-violet1 h4 text-white font-weight-bolder px-3 py-2 pb-3">
           Sponsors
-        </div>
+        </h1>
         <div className="px-3">
           {
             sponsors.map(

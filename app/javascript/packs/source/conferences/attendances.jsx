@@ -3,7 +3,7 @@ import axios from "axios"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faUser } from '@fortawesome/free-regular-svg-icons';
 import Navbar from "../navbar"
-import fetcher from "../utils/fetcher"
+import fetcher from "../utils/helpers/fetcher"
 class ConferencesAttendancesIndex extends Component {
   constructor(props) {
     super(props)
@@ -29,9 +29,9 @@ class ConferencesAttendancesIndex extends Component {
     return (
       <div>
         <Navbar conference_id={id} />
-        <div className="bg-violet1 text-white font-weight-bolder px-3 py-2 pb-3">
+        <h1 className="bg-violet1 h4 text-white font-weight-bolder px-3 py-2 pb-3">
           Attendances
-        </div>
+        </h1>
         <div className="px-2 w-100">
           {
             attendances.map(

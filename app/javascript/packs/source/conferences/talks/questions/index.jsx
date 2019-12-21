@@ -1,10 +1,10 @@
 import React, { Component, Fragment } from "react"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faGraduationCap } from "@fortawesome/free-solid-svg-icons";
-import { formatTime } from "../../../utils"
+import { formatTime } from "../../../utils/helpers"
 import { faClock, faUser, faPaperPlane } from "@fortawesome/free-regular-svg-icons";
 import Navbar from "../../../navbar"
-import fetcher from "../../../utils/fetcher"
+import fetcher from "../../../utils/helpers/fetcher"
 import axios from "axios"
 
 class ConferencesTalksQuestionsIndex extends Component {
@@ -67,9 +67,9 @@ class ConferencesTalksQuestionsIndex extends Component {
         <Navbar conference_id={conference_id} />
         <div className="mb-50">
           <div className="bg-violet1 p-4">
-            <div className="text-white font-weight-bolder mb-2">
+            <h1 className="text-white h4 font-weight-bolder mb-2">
               Discussions
-            </div>
+            </h1>
             <div className="bg-white my-1 rounded p-3 d-flex align-items-center">
               <div className="d-flex flex-column w-100">
                 <div className="font-weight-bolder text-green1">

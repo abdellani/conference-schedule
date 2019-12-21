@@ -1,9 +1,9 @@
 import React, { Component, Fragment } from "react"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faChevronDown, faPodcast, faLandmark, faPlusCircle, faUser } from '@fortawesome/free-solid-svg-icons';
-import { formatTime } from "../../utils"
+import { formatTime } from "../../utils/helpers"
 import Navbar from "../../navbar"
-import fetcher from "../../utils/fetcher"
+import fetcher from "../../utils/helpers/fetcher"
 import { Link } from "react-router-dom"
 import axios from "axios"
 class ConferencesTalksIndex extends Component {
@@ -104,7 +104,12 @@ class ConferencesTalksIndex extends Component {
                               </div>
                             </Link>
                             <div
-                              onClick={() => this.addToSchedule(t.id)}
+                              onClick={(e) => {
+                                this.addToSchedule(t.id);
+                                let target=e.target
+                                let newNode =target.cloneNode(true);
+                                target.parentNode.replaceChild(newNode,target)
+                              }}
                               className="w-min-20 bg-green1 add-to-schedule-button text-nowrap d-flex align-items-center justify-content-center ">
                               <h3 >
                                 <FontAwesomeIcon icon={faPlusCircle} />

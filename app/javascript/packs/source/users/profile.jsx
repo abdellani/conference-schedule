@@ -1,6 +1,6 @@
 import React, { Fragment } from "react"
 import Navbar from "../navbar"
-import fetcher from "../utils/fetcher"
+import fetcher from "../utils/helpers/fetcher"
 import { Link } from "react-router-dom"
 import { faLandmark, faPodcast, faBook, faBookOpen } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
@@ -28,9 +28,9 @@ class Profile extends React.Component {
       <Fragment>
         <Navbar conference_selected={false} />
         <div className="bg-violet1 p-4">
-          <div className="text-white font-weight-bolder mb-2">
+          <h1 className="h4 text-white font-weight-bolder mb-2">
             Profile
-          </div>
+          </h1>
         </div>
         <div>
           <div className="text-blue1 font-weight-bolder px-3 my-2">
