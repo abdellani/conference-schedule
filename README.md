@@ -29,7 +29,7 @@ DB_NAME_TEST: "con_sch_test"
 DB_USER: "consch"
 DB_PASSWORD: "supersecretpassword"
 ```
-To create the tables needed by the model, run the following command
+To create the tables needed by the model, run the following command:
 ```
 rails run db:migrate
 ```
